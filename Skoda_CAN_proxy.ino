@@ -233,7 +233,7 @@ void TaskReadVcc(void) {
       return;
     if (pos.n == 0)
       return;
-    sprintf_P(shared_buf, PSTR("AT+HTTPPARA=\"URL\",\"http://urbanovich.net/webhook/car.php?d=%s&la=%s&lo=%s&vcc=%d&s=%d&rpm=%d&spd=%d&f=%d&l1=%d&l2=%d&vcc_can=%d&can_last=%lu&qid=%d&t=%d\""),
+    sprintf_P(shared_buf, PSTR("AT+HTTPPARA=\"URL\",\"http://urbanovich.net/car/car.php?d=%s&la=%s&lo=%s&vcc=%d&s=%d&rpm=%d&spd=%d&f=%d&l1=%d&l2=%d&vcc_can=%d&can_last=%lu&qid=%d&t=%d\""),
               pos.date, pos.la, pos.lo, pos.vcc, pos.src, pos.rpm, pos.speed_max, pos.fuel, pos.lock_1, pos.lock_2, pos.vcc_can, pos.can_last, pos.n, pos.temp);
     cmd_cb(shared_buf, (&send_http), (&init_http));
     pos.n = 0;
